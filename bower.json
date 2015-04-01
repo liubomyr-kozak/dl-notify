@@ -1,0 +1,14 @@
+{
+  "name": "angular-multi-notification",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": ">= 1.0.8"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test"
+  ]
+}
