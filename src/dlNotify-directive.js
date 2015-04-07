@@ -2,7 +2,7 @@ angular.module('dl.notify', ['dl.notify.service'])
   .directive('dlNotify', [ '$timeout', '$rootScope', 'dlNotifyService', function( $timeout, $rootScope, notify){
     return {
       restrict: 'E', // E = Element, A = Attribute, C = Class, M = Comment
-      templateUrl:'../src/dlNotify-template.html',
+      templateUrl:'src/dlNotify-template.html',
       link: function(scope){
 
         scope.dlNotify = {};
