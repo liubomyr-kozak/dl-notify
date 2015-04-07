@@ -56,10 +56,12 @@ angular.module('dl.notify.service', [])
 
       function removeFromQueue() {
         cancelTimeout();
-        // removeNotificationFromScope(notifyObj);
+        removeNotificationFromScope(notifyObj);
       };
 
+      notifyObj.handleTimeout = handle;
       notifyObj.runAutoRemove = runAutoRemove;
+      notifyObj.removeFromQueue = removeFromQueue;
       notificationScope.push(notifyObj);
     };
 
@@ -75,6 +77,18 @@ angular.module('dl.notify.service', [])
       return notificationScope[0];
     };
 
+    function removeCurrentNotification(_notify){
+      _notify.removeFromQueue()
+    }
+
+    function removeAllNotification(_notificationScope){
+        for(var i = 0, _length = _notificationScope.length; _length > i; i++){
+          $timeout.cancel(_notificationScope.handleTimeout);
+          var idx = notificationScope.indexOf(_notificationScope[i]);
+          notificationScope.splice(idx, 1);
+        }
+    }
+
     $rootScope.$watch(
       function () {
         return getNextNotification();
@@ -88,11 +102,14 @@ angular.module('dl.notify.service', [])
       true
     );
 
+
     return {
       type: notificationType,
       format: format,
       add: addNotification,
       getAllNotification: getAllNotification,
-      getCountOfNotifications: getCountOfNotifications
+      getCountOfNotifications: getCountOfNotifications,
+      removeCurrentNotification: removeCurrentNotification,
+      removeAllNotification: removeAllNotification
     }
   }]);

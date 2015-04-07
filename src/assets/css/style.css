@@ -105,6 +105,9 @@ header {
   background: #F4F4F4;
   border-top: 1px solid #c2c2c2;
 }
+.dl-notify-btn-section-footer {
+  box-shadow: 1px 1px 4px rgba(51, 51, 51, 0.42);
+}
 .dl-notify-message-section {
   padding: 20px;
 }

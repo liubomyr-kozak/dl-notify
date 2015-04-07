@@ -33,12 +33,20 @@ angular.module('dl.notify', ['dl.notify.service'])
         }
 
         scope.notificationOption = function(){
-          scope.dlNotifyScopeNotifications.length > 1 && scope.showBtnBlockNotification
+          scope.dlNotifyScopeNotifications.length > 1 && scope.showBtnBlockNotification;
         };
 
-        scope.dlNotifyClose = function(){
-          scope.dlNotify.displayContainer =  false;
+        scope.dlNotifyClose = function(notification){
+          notify.removeCurrentNotification(notification);
         };
+
+        scope.dlNotifyCancelAll = function(){
+          notify.removeAllNotification(scope.dlNotifyScopeNotifications);
+
+          showBtnBlockNotification = true;
+          scope.showBtnBlockNotification = true;
+          scope.moreThanOneNotification = false;
+        }
 
         scope.dlNotifyShowAll = function(){
           scope.showBtnBlockNotification = false;
