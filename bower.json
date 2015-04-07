@@ -2,7 +2,8 @@
   "name": "angular-multi-notification",
   "version": "0.0.1",
   "dependencies": {
-    "angular": ">= 1.0.8"
+    "angular": ">= 1.0.8",
+    "lesshat": "*"
   },
   "ignore": [
     "**/.*",

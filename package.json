@@ -1,0 +1,15 @@
+{
+  "version": "0.1.0",
+  "name": "dl-notify",
+  "description": "npm package for dl-notify",
+  "author": "Pacefist",
+  "dependencies": {
+    "gulp-util": "*",
+    "gulp-notify": "*",
+    "gulp-less": "*",
+    "gulp-minify-css": "*",
+    "nodemon": "*",
+    "gulp-nodemon": "*",
+    "express": "*"
+  }
+}

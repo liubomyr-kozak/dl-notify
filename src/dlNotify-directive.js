@@ -8,6 +8,7 @@ angular.module('dl.notify', ['dl.notify.service'])
         scope.dlNotify = {};
         scope.moreThanOneNotification = false;
         scope.showBtnBlockNotification = true;
+        var showBtnBlockNotification = true
 
         $rootScope.$watch(
           function () {
@@ -15,7 +16,7 @@ angular.module('dl.notify', ['dl.notify.service'])
           },
           function () {
             scope.dlNotifyScopeNotifications = notify.getAllNotification();
-            showBtnBlockNotification();
+            checkCurrentBtnDisplay();
             scope.dlNotify.displayContainer = true;
 
             if(scope.dlNotifyScopeNotifications.length == 0){
@@ -25,7 +26,7 @@ angular.module('dl.notify', ['dl.notify.service'])
           true
         );
 
-        function showBtnBlockNotification(){
+        function checkCurrentBtnDisplay(){
           if(showBtnBlockNotification){
             scope.showBtnBlockNotification = scope.dlNotifyScopeNotifications.length > 1 ? true : false;
           }
@@ -41,6 +42,7 @@ angular.module('dl.notify', ['dl.notify.service'])
 
         scope.dlNotifyShowAll = function(){
           scope.showBtnBlockNotification = false;
+          showBtnBlockNotification = false;
           scope.moreThanOneNotification = true;
         };
 

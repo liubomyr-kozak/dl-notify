@@ -56,7 +56,7 @@ angular.module('dl.notify.service', [])
 
       function removeFromQueue() {
         cancelTimeout();
-        removeNotificationFromScope(notifyObj);
+        // removeNotificationFromScope(notifyObj);
       };
 
       notifyObj.runAutoRemove = runAutoRemove;

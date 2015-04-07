@@ -8,8 +8,8 @@ app.controller('app', ['$timeout', '$scope', 'dlNotifyService', function($timeou
   var infoObj = notify.format(notify.type.info, 'Info message');
 
 
+  notify.add(infoObj);
   notify.add(successObj);
-
 
   $timeout(function(){
     notify.add(errorObj);
@@ -22,6 +22,26 @@ app.controller('app', ['$timeout', '$scope', 'dlNotifyService', function($timeou
   $timeout(function(){
     notify.add(successObj);
   }, 6000);
+
+  $timeout(function(){
+    notify.add(infoObj);
+  }, 7000);
+
+  $timeout(function(){
+    notify.add(infoObj);
+  }, 7000);
+
+  $timeout(function(){
+    notify.add(infoObj);
+  }, 7000);
+
+  $timeout(function(){
+    notify.add(infoObj);
+  }, 7000);
+
+  $timeout(function(){
+    notify.add(infoObj);
+  }, 7000);
 
   $timeout(function(){
     notify.add(infoObj);
