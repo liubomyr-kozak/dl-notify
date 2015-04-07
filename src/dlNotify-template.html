@@ -1,0 +1,24 @@
+<div class="dl-notify-container"
+     ng-class="{'dl-notify-show': dlNotify.displayContainer,
+                'dl-notify-hide': !dlNotify.displayContainer}">
+
+  <div class="dl-notify-box dl-show-{{notification.type}}"
+       ng-class="{
+          'dl-notify-boxes-decor': dlNotifyScopeNotifications.length > 1 && showBtnBlockNotification,
+          'dl-show-all-notify' : moreThanOneNotification
+       }"
+       ng-repeat="notification in dlNotifyScopeNotifications track by $index">
+
+    <i class="dl-notify-close" ng-click="dlNotifyClose()">&times;</i>
+
+    <div class="dl-notify-message-section">
+      {{ notification.message }}
+    </div>
+
+    <div class="dl-notify-btn-section" ng-if="dlNotifyScopeNotifications.length > 1 && showBtnBlockNotification">
+      <button class="dl-notify-btn dl-notify-btn-cancel">Cancel all</button>
+      <button class="dl-notify-btn dl-notify-btn-show" ng-click="dlNotifyShowAll()">Show all</button>
+    </div>
+
+  </div>
+</div>

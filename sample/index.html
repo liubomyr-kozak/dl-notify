@@ -4,14 +4,17 @@
   <meta charset="UTF-8">
   <title>Notification</title>
   <link rel="stylesheet" href="assets/style.css"/>
+
+  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="app/app.js"></script>
+  <script type="text/javascript" src="../src/dlNotify-directive.js"></script>
+  <script type="text/javascript" src="../src/dlNotify-service.js"></script>
 </head>
 <body ng-controller="app">
   <header></header>
-  <dl-notify></dl-notify>
-  <input type="checkbox" ng-click="triggerNotification()"/>
-  {{flag}}
+
+  <dl:notify></dl:notify>
+
 </body>
-<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
-<script type="text/javascript" src="../src/notify.js"></script>
-<script type="text/javascript" src="app/app.js"></script>
+
 </html>
